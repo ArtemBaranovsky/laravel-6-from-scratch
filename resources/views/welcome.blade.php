@@ -94,6 +94,9 @@
                     <a href="https://vapor.laravel.com">Vapor</a>
                     <a href="https://github.com/laravel/laravel">GitHub</a>
                 </div>
+{{--                <p><?= htmlspecialchars($name, ENT_QUOTES); ?></p>--}}
+                <p>{{ $name }}</p>
+                <p>{!! $name  !!}</p>
             </div>
         </div>
     </body>

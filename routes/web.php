@@ -12,9 +12,8 @@
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
-
-Route::get('/welcome', function () {
-    return view('test');
+    $name = request('name');
+    return view('welcome', [
+        'name' => $name
+    ]);
 });
