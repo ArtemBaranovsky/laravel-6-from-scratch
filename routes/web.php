@@ -11,7 +11,7 @@
 |
 */
 
-Route::get('/post/{post}', 'PostsController@show');
+Route::get('/posts/{post}', 'PostsController@show');
 /*Route::get('/post/{post}', function ($post) {
     $posts = [
         'my-first-post' => 'Hello, this is my first blog post!',
