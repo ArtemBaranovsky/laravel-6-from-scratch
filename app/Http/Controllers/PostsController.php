@@ -4,8 +4,6 @@
 namespace App\Http\Controllers;
 
 
-use App\Post;
-
 class PostsController  extends Controller
 {
     /**
@@ -22,7 +20,7 @@ class PostsController  extends Controller
 //        ];
 
         $post = \DB::table('posts')->where('slug', $slug)->first();
-        dd($post);
+//        dd($post);
 //        if (!array_key_exists($post, $posts)) {
 //            abort(404, 'Sorry that post was not found.');
 //        }
