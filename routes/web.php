@@ -19,7 +19,16 @@ Route::get('/contact', function () {
 });
 
 Route::get('/about', function () {
-    return view('about');
+//    $article = App\Article::all();
+//    $article = App\Article::latest()->get(); // desc created_at
+//    $article = App\Article::latest('updated_at')->get();
+//    $article = App\Article::latest('published_at')->get();
+//    $article = App\Article::take(2)->get();
+//    $article = App\Article::paginate(2);
+//    return $article;
+    return view('about', [
+        'articles' => App\Article::take(3)->latest()->get()
+    ]);
 });
 
 Route::get('/posts/{post}', 'PostsController@show');
