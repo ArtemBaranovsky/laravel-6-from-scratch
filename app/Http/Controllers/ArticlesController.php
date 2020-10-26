@@ -22,4 +22,31 @@ class ArticlesController extends Controller
             'article' => $article
         ]);
     }
+
+    public function create()
+    {
+        // shows a view to create a new resource
+    }
+
+    public function store()
+    {
+        // persist a new resource
+    }
+
+    public function edit()
+    {
+        // show a view to edit an existing resource
+    }
+
+    public function update()
+    {
+        // persist the edited resource
+    }
+
+    public function delete()
+    {
+        // delete an existing resource
+    }
+
+
 }

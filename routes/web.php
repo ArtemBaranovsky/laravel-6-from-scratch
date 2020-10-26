@@ -34,5 +34,7 @@ Route::get('/about', function () {
 
 
 Route::get('/articles/{article}', 'ArticlesController@show');
+Route::get('/articles/{article}/edit', 'ArticlesController@edit');
+Route::get('/articles/{article}/update', 'ArticlesController@update');
 Route::get('/articles', 'ArticlesController@index');
 Route::get('/posts/{post}', 'PostsController@show');
