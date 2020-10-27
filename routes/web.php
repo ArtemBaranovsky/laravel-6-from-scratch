@@ -33,8 +33,10 @@ Route::get('/about', function () {
 
 
 
+Route::get('/articles', 'ArticlesController@index');
+Route::post('/articles', 'ArticlesController@store');
+Route::get('/articles/create', 'ArticlesController@create');
 Route::get('/articles/{article}', 'ArticlesController@show');
 Route::get('/articles/{article}/edit', 'ArticlesController@edit');
-Route::get('/articles/{article}/update', 'ArticlesController@update');
-Route::get('/articles', 'ArticlesController@index');
-Route::get('/posts/{post}', 'PostsController@show');
+Route::put('/articles/{article}/update', 'ArticlesController@update');
+Route::post('/posts/{post}', 'PostsController@show');

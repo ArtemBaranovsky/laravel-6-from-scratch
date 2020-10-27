@@ -18,11 +18,12 @@ Released   : 20140225
     <meta name="description" content="" />
     <link href="http://fonts.googleapis.com/css?family=Source+Sans+Pro:200,300,400,600,700,900" rel="stylesheet" />
     <link href="/css/default.css" rel="stylesheet" />
+{{--    <link href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.1/css/bulma.min.css" rel="stylesheet" />--}}
 {{--    <link rel="stylesheet" href="{{ asset('/css/default.css') }}">--}}
     <link href="/css/fonts.css" rel="stylesheet" />
 {{--    <link rel="stylesheet" href="/css/app.css">--}}
     <link rel="stylesheet" href="{{ mix('/css/app.css') }}">
-
+    @yield('head')
 </head>
 <body>
     <div id="header-wrapper">
