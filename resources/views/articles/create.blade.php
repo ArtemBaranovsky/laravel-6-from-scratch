@@ -13,21 +13,51 @@
                 <div class="field">
                     <label for="title" class="label">Title</label>
                     <div class="control">
-                        <input class="input" type="text" name="title" id="title">
+{{--                        <input class="input {{ $errors->has('title') ? 'is-danger' : '' }}" type="text" name="title" id="title" --}}{{--required--}}{{-->--}}
+                        <input
+                            class="input @error('title') is-danger @enderror"
+                            type="text"
+                            name="title"
+                            id="title"
+                            value="{{ old('title') }}">
+{{--                        @if($errors->has('title'))--}}
+{{--                            <p class="help is-danger">{{ $errors->first('title') }}</p>--}}
+{{--                        @endif--}}
+                        @error('title')
+                        <p class="help is-danger">{{ $errors->first('title') }}</p>
+                        @enderror
                     </div>
                 </div>
 
                 <div class="field">
                     <label for="excerpt" class="label">Excerpt</label>
                     <div class="control">
-                        <textarea class="textarea" type="text" name="excerpt" id="excerpt"></textarea>
+                        <textarea
+                            class="textarea @error('excerpt') is-danger @enderror"
+                            type="text"
+                            name="excerpt"
+                            id="excerpt"
+                            value="{{ old('excerpt') }}"></textarea>
+                        @error('excerpt')
+                        <p class="help is-danger">{{ $errors->first('excerpt') }}</p>
+                        @enderror
+
                     </div>
                 </div>
 
                 <div class="field">
                     <label for="body" class="label">Body</label>
                     <div class="control">
-                        <textarea class="textarea" type="text" name="body" id="body"></textarea>
+                        <textarea
+                            class="textarea @error('body') is-danger @enderror"
+                            type="text"
+                            name="body"
+                            id="body"
+                            value="{{ old('body') }}"></textarea>
+                        @error('body')
+                        <p class="help is-danger">{{ $errors->first('body') }}</p>
+                        @enderror
+
                     </div>
                 </div>
 
