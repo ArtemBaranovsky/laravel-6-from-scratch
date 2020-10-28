@@ -14,17 +14,10 @@ class ArticlesController extends Controller
         return view('articles.index', ['articles' => $articles]);
     }
 
-//    public function show($id)
-//    public function show(Article $foobar)
     public function show(Article $article)
     {
-//        $article = Article::findOrFail($id);
-//        return $article;
-//        Article::where('id', 1)->first();
         return view('articles.show', [
             'article' => $article
-//            'article' => $foobar
-
         ]);
     }
 
@@ -35,65 +28,22 @@ class ArticlesController extends Controller
 
     public function store()
     {
-        // validation
-        //        dd($validatedAttributes);
-//        request()->validate([
-/*        $validatedAttributes = request()->validate([
-//            'title' => ['required', 'min:3', 'max:255'],
-//            'title' => 'required|min:3|max:255',
-            'title' => 'required',
-            'excerpt' => 'required',
-            'body' => 'required'
-        ]);*/
-        // clean up
-//        $article = new Article();
-//        $article->title = request('title');
-//        $article->excerpt = request('excerpt');
-//        $article->body = request('body');
-//        $article->save();
-/*        Article::create([
-            'title' => request('title'),
-            'excerpt' =>  request('excerpt'),
-            'body' =>  request('body'),
-        ]);*/
-//        Article::create($validatedAttributes);
-/*        Article::create(request()->validate([
-            'title' => 'required',
-            'excerpt' => 'required',
-            'body' => 'required'
-        ]));*/
         Article::create($this->validateArticle());
-        return redirect('/articles');
+        return redirect(route('articles.index'));
+//        return redirect('/articles');
     }
 
-//    public function edit($id)
     public function edit(Article $article)
     {
-//        $article = Article::find($id);
         return view('articles.edit', compact('article'));
     }
 
-//    public function update($id)
     public function update(Article $article)
     {
-/*        request()->validate([
-            'title' => 'required',
-            'excerpt' => 'required',
-            'body' => 'required'
-        ]);*/
-//        $article = Article::find($id);
-//        $article->title = request('title');
-//        $article->excerpt = request('excerpt');
-//        $article->body = request('body');
-//        $article->save();
-/*        Article::create([
-            'title' => request('title'),
-            'excerpt' =>  request('excerpt'),
-            'body' =>  request('body')
-        ]);*/
         $article->update($this->validateArticle());
-
-        return redirect('/articles/' . $article->id);
+//        return redirect(route('articles.show', $article));
+        return redirect($article->path());
+//        return redirect('/articles/' . $article->id);
     }
 
     public function delete()
@@ -112,7 +62,5 @@ class ArticlesController extends Controller
             'body' => 'required'
         ]);
     }
-
-
 }
 
