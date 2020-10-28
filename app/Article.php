@@ -6,5 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Article extends Model
 {
-    //
+/*    public function getRouteKeyName()
+    {
+        return 'slug';  // column name used to route via model binding
+        // Article::where('slug', $article)->first();
+    }*/
 }
