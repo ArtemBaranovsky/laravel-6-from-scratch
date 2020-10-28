@@ -20,4 +20,9 @@ class Article extends Model
         return 'slug';  // column name used to route via model binding
         // Article::where('slug', $article)->first();
     }*/
+
+    public function user()
+    {
+
+    }
 }
