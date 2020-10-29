@@ -21,8 +21,8 @@ class Article extends Model
         // Article::where('slug', $article)->first();
     }*/
 
-    public function user()
+    public function author()
     {
-
+        return $this->belongsTo(User::class, 'user_id');
     }
 }

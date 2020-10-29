@@ -37,10 +37,10 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    public function articles()
+/*    public function articles()
     {
         return $this->hasMany(Article::class);
-    }
+    }*/
 
     public function projects()
     {
