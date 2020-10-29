@@ -9,7 +9,7 @@ class Article extends Model
 //    protected $fillable = ['title', 'excerpt', 'body'];
     protected $guarded = [];
 
-    public function path()
+    public function     path()
     {
 //        return '/articles/';
         return route('articles.show', $this);
@@ -26,7 +26,7 @@ class Article extends Model
         return $this->belongsTo(User::class, 'user_id');
     }
 
-    public function tag()
+    public function tags()
     {
         return $this->belongsToMany(Tag::class);
     }
