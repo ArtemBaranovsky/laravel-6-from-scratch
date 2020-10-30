@@ -63,7 +63,7 @@
 
                 <div class="field">
                     <label for="body" class="label">Tags</label>
-                    <div class="control">
+                    <div class="select is-multiple control">
                         <select
                             name="tags[]"
                             multiple
