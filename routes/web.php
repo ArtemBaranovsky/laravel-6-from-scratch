@@ -11,7 +11,14 @@
 |
 */
 Route::get('/', function () {
-    return view('welcome');
+//    return view('welcome');
+    $container = new \App\Container();              // More typically it would go in what we call a Service Provider
+    $container->bind('example', function () {
+        return new \App\Example();
+    });
+    $example = $container->resolve('example');
+    $example->go();
+//    ddd($example);
 });
 
 Route::get('/contact', function () {
