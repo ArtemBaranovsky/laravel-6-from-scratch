@@ -10,7 +10,28 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/', function () {
+
+/*app()->bind('App\Example', function () {    // moved to AppServiceProvider@register
+    $collaborator = new \App\Collaborator();
+    $foo = 'foobar';
+    return new \App\Example($collaborator, $foo);
+});*/
+/*app()->bind('example', function () {
+//    $foo = config('services.foo');
+    return new \App\Example();
+//    return new \App\Example($foo);
+});*/
+
+Route::get('/', 'PagesController@home');
+/*//Route::get('/', function () {
+Route::get('/', function (App\Example $example) {
+//    $example = resolve('example');
+//    $example = resolve('App\Example');
+//    $example = resolve(App\Example::class);     // explicitly resolving Example out of the container
+//    $example = app()->make(App\Example::class);        // if you want it to match what we have up here (app()->bind()...)
+    ddd($example);
+});*/
+/*Route::get('/', function () {
 //    return view('welcome');
     $container = new \App\Container();              // More typically it would go in what we call a Service Provider
     $container->bind('example', function () {
@@ -19,7 +40,7 @@ Route::get('/', function () {
     $example = $container->resolve('example');
     $example->go();
 //    ddd($example);
-});
+});*/
 
 Route::get('/contact', function () {
     return view('contact');
