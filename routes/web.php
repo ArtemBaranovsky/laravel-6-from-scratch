@@ -42,9 +42,11 @@ Route::get('/', function (App\Example $example) {
 //    ddd($example);
 });*/
 
-Route::get('/contact', function () {
-    return view('contact');
-});
+Route::get('/contact', 'ContactController@show');
+Route::post('/contact', 'ContactController@store');
+//Route::get('/contact', function () {
+//    return view('contact');
+//});
 
 Route::get('/about', function () {
 //    $article = App\Article::all();
