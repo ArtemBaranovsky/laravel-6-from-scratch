@@ -22,6 +22,7 @@
 //    return new \App\Example($foo);
 });*/
 
+Route::get('notifications', 'UserNotificationsController@show')->middleware('auth');
 Route::get('payments/create', 'PaymentsController@create')->middleware('auth');
 Route::post('payments', 'PaymentsController@store')->middleware('auth');
 Route::get('/', 'PagesController@home');

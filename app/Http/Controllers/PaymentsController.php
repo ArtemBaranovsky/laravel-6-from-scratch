@@ -18,7 +18,8 @@ class PaymentsController extends Controller
 //        Mail::to();
 //        Notification::send(request()->user());
 //        Notification::send(request()->user(), new PaymentReceived());
-        request()->user()->notify(new PaymentReceived());
-        return redirect('payments.create');
+//        request()->user()->notify(new PaymentReceived());
+        request()->user()->notify(new PaymentReceived(900));
+//        return redirect('payments/create');
     }
 }
