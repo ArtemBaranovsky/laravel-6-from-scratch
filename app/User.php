@@ -42,8 +42,22 @@ class User extends Authenticatable
         return $this->hasMany(Article::class);
     }*/
 
+    protected $phone_number;
+
     public function projects()
     {
         return $this->hasMany(Project::class);
+    }
+
+    /**
+     * Route notifications for the Nexmo channel.
+     *
+     * @param  \Illuminate\Notifications\Notification  $notification
+     * @return string
+     */
+    public function routeNotificationForNexmo($notification)
+    {
+//        return $this->phone_number;
+        return '380672960705';   // testing hardcode
     }
 }
