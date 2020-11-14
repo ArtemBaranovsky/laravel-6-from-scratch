@@ -2,6 +2,8 @@
 
 namespace App\Providers;
 
+use App\Conversation;
+use App\User;
 use Illuminate\Foundation\Support\Providers\AuthServiceProvider as ServiceProvider;
 use Illuminate\Support\Facades\Gate;
 
@@ -25,6 +27,10 @@ class AuthServiceProvider extends ServiceProvider
     {
         $this->registerPolicies();
 
-        //
+//        Gate::define('update-conversation', function (?User $user, Conversation $conversation) {  // ?User makes User optional
+/*        Gate::define('update-conversation', function (?User $user, Conversation $conversation) {  // moved to own dedicated policy class
+//            return true;
+            return $conversation->user->is($user);
+        });*/
     }
 }

@@ -49,6 +49,11 @@ class User extends Authenticatable
         return $this->hasMany(Project::class);
     }
 
+    public function conversations()
+    {
+        return $this->hasMany(Conversation::class);
+    }
+
     /**
      * Route notifications for the Nexmo channel.
      *
