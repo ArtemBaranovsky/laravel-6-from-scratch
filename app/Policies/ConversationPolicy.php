@@ -10,6 +10,19 @@ class ConversationPolicy
 {
     use HandlesAuthorization;
 
+/*    public function before(User $user)    // logic moved to AuthServiceProvider@boot as Gate::before closure
+    {
+        if ($user->id == 3) {  // admin id = 3  ->isAdmin() ->roles())
+            return true;
+        }
+//        return $user->id == 3;
+    }*/
+
+    public function after(User $user)
+    {
+
+    }
+
     /**
      * Determine whether the user can update the conversation.
      *
@@ -19,6 +32,7 @@ class ConversationPolicy
      */
     public function update(User $user, Conversation $conversation)
     {   // admin_id = 3
-        return $conversation->user->is($user) || $user->id == 3;    // homework: consider the example where the administrator may also update the thread
+//        ddd('hello');
+        return $conversation->user->is($user)/* || $user->id == 3*/;    // homework: consider the example where the administrator may also update the thread
     }
-}
+ }
