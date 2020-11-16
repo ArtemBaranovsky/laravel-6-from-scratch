@@ -36,4 +36,9 @@ class ConversationPolicy
 //        ddd('hello');
         return $conversation->user->is($user)/* || $user->id == 3*/;    // homework: consider the example where the administrator may also update the thread
     }
+
+    public function view(User $user, Conversation $conversation)
+    {
+        return $conversation->user->is($user);
+    }
  }
