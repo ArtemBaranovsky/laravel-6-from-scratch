@@ -12,6 +12,7 @@
 
 {{--        @can('update-conversation', $conversation)--}}
         @can('update', $conversation)
+{{--        @can('create', $conversation)--}}
 {{--            <form method="POST" action="/conversations/best-replies/{{ $reply->id }}">--}}
             <form method="POST" action="/best-replies/{{ $reply->id }}">
                 @csrf

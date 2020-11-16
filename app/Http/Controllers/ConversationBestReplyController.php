@@ -17,6 +17,7 @@ class ConversationBestReplyController extends Controller
 
 //        $this->authorize('update-conversation', $reply->conversation);
         $this->authorize('update', $reply->conversation);   // action renamed as at the policy
+//        $this->authorize($reply->conversation);   // if delete ability param, laravel will try to figure out which policy method it should call
 
         // then set it
 //        $reply->conversation->best_reply_id = $reply->id;

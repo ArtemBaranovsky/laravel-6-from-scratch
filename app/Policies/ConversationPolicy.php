@@ -31,6 +31,7 @@ class ConversationPolicy
      * @return mixed
      */
     public function update(User $user, Conversation $conversation)
+//    public function create(User $user, Conversation $conversation)  // name changed to match a mapping convention between the controller action and the associated Policy name
     {   // admin_id = 3
 //        ddd('hello');
         return $conversation->user->is($user)/* || $user->id == 3*/;    // homework: consider the example where the administrator may also update the thread
