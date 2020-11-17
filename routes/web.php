@@ -32,7 +32,7 @@ Route::post('best-replies/{reply}', 'ConversationBestReplyController@store');
 Route::get('notifications', 'UserNotificationsController@show')->middleware('auth');
 Route::get('payments/create', 'PaymentsController@create')->middleware('auth');
 Route::post('payments', 'PaymentsController@store')->middleware('auth');
-Route::get('/', 'PagesController@home');
+//Route::get('/', 'PagesController@home');
 /*//Route::get('/', function () {
 Route::get('/', function (App\Example $example) {
 //    $example = resolve('example');
@@ -41,16 +41,21 @@ Route::get('/', function (App\Example $example) {
 //    $example = app()->make(App\Example::class);        // if you want it to match what we have up here (app()->bind()...)
     ddd($example);
 });*/
-/*Route::get('/', function () {
-//    return view('welcome');
-    $container = new \App\Container();              // More typically it would go in what we call a Service Provider
+
+auth()->loginUsingId(3);
+Route::get('/', function () {
+    return view('welcome');
+/*    $container = new \App\Container();              // More typically it would go in what we call a Service Provider
     $container->bind('example', function () {
         return new \App\Example();
     });
     $example = $container->resolve('example');
-    $example->go();
+    $example->go();*/
 //    ddd($example);
-});*/
+});
+Route::get('/reports', function () {
+    return 'the secret reports';
+})->middleware('can:view_reports');
 
 Route::get('/contact', 'ContactController@show');
 Route::post('/contact', 'ContactController@store');

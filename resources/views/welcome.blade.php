@@ -24,6 +24,18 @@
                 @elseguest
                     <p>Laravel</p>
                 @endguest--}}
+        <h1>My site</h1>
+        @can('edit_forum')
+            <li>
+                <a href="#">Edit Forum</a>
+            </li>
+        @endcan
+
+        @can('view_reports')
+            <li>
+                <a href="/reports">View Reports</a>
+            </li>
+        @endcan
         </div>
     </div>
 @endsection

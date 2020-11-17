@@ -65,4 +65,24 @@ class User extends Authenticatable
 //        return $this->phone_number;
         return '380672960705';   // testing hardcode
     }
+
+    public function roles()
+    {
+        return $this->belongsToMany(Role::class)->withTimestamps();
+    }
+
+    public function assignRole($role)
+    {
+        if (is_string($role)) {
+            $role = Role::whereName($role)->firstOrFail();
+        }
+//        $this->roles()->save($role);
+//        $this->roles()->sync($role);
+        $this->roles()->sync($role, false); // we don't want to drop anything from database
+    }
+
+    public function abilities()
+    {
+        return $this->roles->map->abilities->flatten()->pluck('name')->unique();
+    }
 }
